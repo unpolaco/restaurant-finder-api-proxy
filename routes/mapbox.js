@@ -10,6 +10,7 @@ router.get('/', async (req, res)=>{
 const params = new URLSearchParams({
     access_token: MAPBOX_TOKEN,
     ...url.parse(req.url, true).query
+    
 })
 
     try {
