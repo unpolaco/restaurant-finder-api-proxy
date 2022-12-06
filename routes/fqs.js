@@ -15,6 +15,7 @@ router.get("/", async (req, res) => {
       headers: {
         Authorization: FQS_API_KEY,
         Accept: "application/json",
+       'Access-Control-Allow-Origin': '*'
       },
     };
     const apiRes = await needle("get", `${FQS_URL}?${params}`, options);

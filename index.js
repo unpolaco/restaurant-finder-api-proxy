@@ -1,5 +1,6 @@
 const express = require ('express')
 const rateLimit = require('express-rate-limit')
+const cors = require('cors')
 require('dotenv').config()
 
 const PORT = process.env.PORT || 5000
@@ -13,6 +14,8 @@ const limiter = rateLimit({
 
 app.use(limiter)
 app.set('trust proxy', 1)
+
+app.use(cors())
 
 app.use('/api/fsq', require('./routes/fqs.js'))
 app.use('/api/mapbox', require('./routes/mapbox'))
